@@ -7,8 +7,8 @@ import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class HelloServer {
-    private static final String SERVICE_NAME = "rmi://localhost/HelloService";
+public class CalcServer {
+    private static final String SERVICE_NAME = "rmi://localhost/CalcService";
 
     public static void main(String[] args) throws Exception {
         System.setProperty("java.security.policy", StringUtil.toPathString(Main.class.getResource("/rmi.policy")));
@@ -18,7 +18,7 @@ public class HelloServer {
         }
 
         LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
-        Naming.rebind(SERVICE_NAME, new HelloImpl());
+        Naming.rebind(SERVICE_NAME, new CalcImpl());
         System.out.println("HelloServer bound");
     }
 }
