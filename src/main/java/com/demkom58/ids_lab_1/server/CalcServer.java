@@ -19,6 +19,6 @@ public class CalcServer {
 
         LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
         Naming.rebind(SERVICE_NAME, new CalcImpl());
-        System.out.println("HelloServer bound");
+        System.out.println("CalcServer bound");
     }
 }
